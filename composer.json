@@ -3,5 +3,8 @@
     "description": "Simple PDO Class for small PHP projects",
     "require": {
         "php": "^5.3.3 || ^7.0"
+    },
+    "autoload": {
+        "files": ["lib/pdo.class.php"]
     }
 }
