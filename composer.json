@@ -1,6 +1,18 @@
 {
     "name": "zilus/pdo",
+    "type": "class",
     "description": "Simple PDO Class for small PHP projects",
+    "keywords": ["PDO","php"],
+    "homepage": "https://github.com/Zilus/pdo",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Oscar Azpeitia",
+            "email": "me@thezilus.com",
+            "homepage": "https://thezilus.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "php": "^5.3.3 || ^7.0"
     },
