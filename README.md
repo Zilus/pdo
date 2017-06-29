@@ -19,7 +19,7 @@ View on [GitHub](https://github.com/zilus/pdo).
 ``require_once 'vendor/autoload.php';``
 
 ## Manual installation
-Download the source from [GitHub](https://github.com/zilus/pdo) as Zip.
+Download the source from here:  [zip](https://github.com/Zilus/pdo/archive/master.zip)
 
 Unzip and place the source files in a web accessible location. Then include or require (you can choose which method to use).
 
