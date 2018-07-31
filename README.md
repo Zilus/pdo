@@ -2,8 +2,6 @@
 
 You can use this small class to query your MySQL Server from back or/and frontend projects.
 
-View on [GitHub](https://github.com/zilus/pdo).
-
 ## Install with composer
 
 ``composer require zilus/pdo:dev-master``
@@ -46,7 +44,7 @@ define("DB_NAME", "databse");
 
 ### Insert data
 ```
-$database = new Database();
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="INSERT INTO table (name, lastname) VALUES (:name, :lastname)";
 $database->query($sql);
 $database->bind(':name', 'John');
@@ -56,7 +54,7 @@ $database->execute();
 
 ### As an array
 ```
-$database = new Database();
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="INSERT INTO table (name, lastname) VALUES (:name, :lastname)";
 $database->query($sql);
 $database->bindArray(array(
@@ -71,7 +69,7 @@ $database->execute();
 
 ### Chain querys
 ```
-$database = new Database();
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $database->beginTransaction();
   $sql="INSERT INTO table (name, lastname) VALUES (:name, :lastname)";
   $database->query($sql);
@@ -91,7 +89,7 @@ $database->endTransaction();
 
 ### Getting data (1 row)
 ```
-$database = new Database();
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="SELECT * FROM table WHERE name = :name";
 $database->query($sql);
 $database->bind(':name', 'Jenny');
@@ -101,7 +99,7 @@ echo $row['name'];
 
 ### Getting data (several rows)
 ```
-$database = new Database();
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="SELECT * FROM table WHERE lastname = :lastname";
 $database->query($sql);
 $database->bind(':lastname', 'Smith');
@@ -117,6 +115,7 @@ foreach($rows as &$row) {
 ### Update data
 ```
 $id = 14;
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="UPDATE table SET name = :name, lastname = :lastname WHERE id = :id";
 $database->query($sql);
 $database->bind(':id', $id);
@@ -128,6 +127,7 @@ $database->execute();
 ### Update as an array
 ```
 $id = 14;
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="UPDATE table SET name = :name, lastname = :lastname WHERE id = :id";
 $database->query($sql);
 $database->bindArray(array(
@@ -141,6 +141,7 @@ $database->execute();
 ### Delete data
 ```
 $id = 14;
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 $sql="DELETE FROM table WHERE id = :id";
 $database->query($sql);
 $database->bind(':id', $id);

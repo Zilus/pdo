@@ -1,16 +1,21 @@
 <?php
 class Database
 {
-    private $host = DB_HOST;
-    private $user = DB_USER;
-    private $pass = DB_PASS;
-    private $dbname = DB_NAME;
+    private $host;
+    private $user;
+    private $pass;
+    private $dbname;
     private $dbh;
     private $error;
     private $stmt;
 
-    public function __construct()
+    public function __construct($host, $user, $pass, $dbname)
     {
+        $this->host = $host;
+        $this->user = $user;
+        $this->pass = $pass;
+        $this->dbname = $dbname;
+        
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;
         $options = array(
         PDO::ATTR_PERSISTENT  => true,
