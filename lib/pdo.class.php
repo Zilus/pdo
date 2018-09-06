@@ -6,7 +6,7 @@ class Database
     private $pass;
     private $dbname;
     private $dbh;
-    private $error;
+    public $error;
     private $stmt;
 
     public function __construct($host, $user, $pass, $dbname)

@@ -109,6 +109,16 @@ foreach($rows as &$row) {
 }
 ```
 
+### Use LIKE condition
+```
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$sql="SELECT * FROM table WHERE name LIKE :name";
+$database->query($sql);
+$database->bind(':name', '%Jenny%');
+$row = $database->single();
+echo $row['name'];
+```
+
 ### Get the row count
 ``$database->rowCount();``
 
@@ -146,4 +156,10 @@ $sql="DELETE FROM table WHERE id = :id";
 $database->query($sql);
 $database->bind(':id', $id);
 $database->execute();
+```
+
+### print database errors
+```
+$database = new Database(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+print_r($database->error);
 ```
