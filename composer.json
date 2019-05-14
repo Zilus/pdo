@@ -14,9 +14,12 @@
         }
     ],
     "require": {
-        "php": "^5.3.3 || ^7.0"
+        "php": "^5.3.3 || ^7.0",
+        "ext-pdo": "*"
     },
     "autoload": {
-        "files": ["lib/pdo.class.php"]
+        "files": [
+          "lib/Database.php"
+        ]
     }
 }

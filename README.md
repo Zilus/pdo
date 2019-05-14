@@ -30,15 +30,15 @@ The class expects 4 PHP constants, this if for practical use, you can create a c
 ### Via config.php
 
 ```
-define("DB_HOST", "localhost");
-define("DB_USER", "user");
-define("DB_PASS", 'password');
-define("DB_NAME", "databse");
+define('DB_HOST', 'localhost');
+define('DB_USER', 'user');
+define('DB_PASS', 'password');
+define('DB_NAME', 'databse');
 ```
 
 ### Via object
 
-``$database = new Database("localhost", "user", "password", "database");``
+``$database = new Database('localhost', 'user', 'password', 'database');``
 
 # Usage
 
